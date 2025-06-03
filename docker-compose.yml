@@ -1,0 +1,48 @@
+version: "3.8"
+
+services:
+  postgres:
+    image: postgres:15
+    container_name: postgres_desafio
+    restart: always
+    environment:
+      POSTGRES_DB: desafio_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    networks:
+      - spring-challenge_springboot_net
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: pgadmin_desafio
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: italo@outlook.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+    ports:
+      - "5050:80"
+    depends_on:
+      - postgres
+    networks:
+      - spring-challenge_springboot_net
+
+  app:
+    build: .
+    container_name: springboot_app
+    ports:
+      - "8081:8081"
+    depends_on:
+      - postgres
+    networks:
+      - spring-challenge_springboot_net
+
+volumes:
+  pgdata:
+
+networks:
+  spring-challenge_springboot_net:
+    driver: bridge
