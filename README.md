@@ -1,8 +1,3 @@
-Claro! Vou criar um **relatório didático e aprofundado** para que você possa estudar e se preparar para entrevistas técnicas usando como base o repositório [java-spring-boot-challenge](https://github.com/ItaloRochaj/java-spring-boot-challenge).  
-O objetivo é transformar o conteúdo do desafio em um **guia de estudo estruturado**, cobrindo conceitos, arquitetura, boas práticas e possíveis perguntas de entrevista.
-
----
-
 # 📚 Relatório de Estudo – Java Spring Boot Challenge
 
 ## 1. 🎯 Objetivo do Projeto
